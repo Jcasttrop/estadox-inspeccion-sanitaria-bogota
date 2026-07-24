@@ -1,12 +1,13 @@
-# Inspección Sanitaria Inteligente
+# Inspección Sanitaria Inteligente — Bogotá
 
-Solución para el **Hackathon EstadoX**: transformar la inspección sanitaria de un modelo
-reactivo y aleatorio a uno **predictivo, focalizado y auditable**. Cada establecimiento
-vigilado recibe un puntaje de riesgo dinámico para que el inspector visite primero donde
-el riesgo es mayor.
+Solución para el **Hackathon EstadoX**: transformar la inspección sanitaria de los
+~400.000 establecimientos vigilados de **Bogotá** de un modelo reactivo y aleatorio a
+uno **predictivo, focalizado y auditable**. Cada establecimiento recibe un puntaje de
+riesgo dinámico para que el inspector visite primero donde el riesgo es mayor.
 
-> Extraída del monorepo de PereiraReporta a un proyecto autónomo. Toda la funcionalidad
-> vive en la ruta `/inspeccion-sanitaria`.
+> Nota técnica: el código se originó dentro del monorepo de PereiraReporta (solo se
+> reutilizó su infraestructura) y aquí vive como proyecto autónomo. Toda la funcionalidad
+> está en la ruta `/inspeccion-sanitaria`.
 
 ## Los 4 ejes implementados
 

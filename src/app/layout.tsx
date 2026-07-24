@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     "riesgo",
     "salud pública",
     "priorización",
-    "EstadoX",
-    "Pereira",
+    "Hackathon EstadoX",
     "Bogotá",
   ],
 };
