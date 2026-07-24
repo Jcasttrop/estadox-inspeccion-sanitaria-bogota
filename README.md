@@ -56,21 +56,27 @@ Los **4 ejes del reto**, todos implementados:
 - **Eje 1 — Puntaje dinámico de riesgo** — cada establecimiento recibe un score auditable 0–100 con
   desglose factor por factor (tipo, antigüedad del concepto, historial, población, quejas). 3.543
   establecimientos reales de OpenStreetMap. → `src/components/inspeccion/RiesgoMap.tsx`, `src/data/inspeccion.ts`
+  <img width="1893" height="1037" alt="image" src="https://github.com/user-attachments/assets/f7c58ece-b68c-4739-8e43-57b16decc6ea" />
 - **Eje 2 — Agenda diaria del inspector** — ruteo por proximidad (TSP sobre calles vía OSRM, con
   fallback greedy haversine), jornada 08–17 con almuerzo, intercalado 2+1 (alto riesgo + verificación
   rápida cercana), índice de desatención por UPZ y cierre del ciclo con reporte de visita
   *predicho-vs-encontrado*. → `src/lib/agenda.ts`, `src/lib/visita.ts`
+  <img width="1890" height="1023" alt="image" src="https://github.com/user-attachments/assets/5d56387e-bc95-413b-98c7-02cdbc0dd228" />
 - **Eje 3 — Autovigilancia + reporte ciudadano** —
   - *(a)* Autorreporte del establecimiento: encuesta guiada por tipo (módulos A–G) con fotos; los
     hallazgos recalculan el score en vivo. → `src/lib/autorreporte.ts`, `src/components/inspeccion/EncuestaAutovigilancia.tsx`
   - *(b)* Reporte ciudadano: cualquiera toca un establecimiento en el mapa y reporta con foto + comentario;
     suma a `quejas_ciudadanas` y se inyecta como caso en el Eje 4. → `src/components/inspeccion/ReporteCiudadano.tsx`
+    <img width="1896" height="995" alt="image" src="https://github.com/user-attachments/assets/d4063301-9aef-4cb1-8245-f04442fbac01" />
 - **Eje 4 — Detección de clusters de brotes** — DBSCAN simplificado (radio 400 m, ventana 72 h, mínimo
   4 casos) que cruza SIVIGILA + urgencias + quejas ciudadanas y propone la fuente probable. → `src/lib/brotes.ts`
+  <img width="1875" height="1022" alt="image" src="https://github.com/user-attachments/assets/80ca6c17-32f6-493a-a246-ce3ab1b9f8ed" />
 - **Cierre — Backtest estilo Chicago** — sobre un ground-truth simulado, determinista y auditable,
   compara el orden del modelo vs. el reactivo/aleatorio y grafica que el modelo detecta ≈69% de las
   violaciones críticas a mitad de periodo (vs. ≈50%), replicando el resultado de Chicago. KPIs
   computados, nunca hardcodeados. → `src/lib/backtest.ts`, `src/components/inspeccion/Backtest.tsx`
+  <img width="983" height="903" alt="image" src="https://github.com/user-attachments/assets/77cefe98-8b26-4aa4-b386-35ef1601f449" />
+
 
 > **Datos:** los establecimientos y su geolocalización son reales (OpenStreetMap); los scores,
 > historiales y casos epidemiológicos son simulados con fórmulas transparentes y auditables para la
